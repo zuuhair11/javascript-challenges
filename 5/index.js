@@ -1,4 +1,4 @@
-import product from './data.js';
+import products from './data.js';
 
 
 /*
@@ -20,16 +20,16 @@ import product from './data.js';
 
 function getSaleItems(data){
     return data
-        .filter( item => item.type === 'sweet')
-        .map( item => {
+        .filter( product => product.type === 'sweet')
+        .map( product => {
             return {
-                item: item.item,
-                price: item.price
+                item: product.item,
+                price: product.price
             }
         });
 };
 
 
-const shoppingCart = getSaleItems(product);
+const shoppingCart = getSaleItems(products);
 
-shoppingCart.forEach( item => console.log(item));
+shoppingCart.forEach( product => console.log(product));
